@@ -92,16 +92,24 @@
 <blockquote>
 <p>Note : Une section ressources est présente, pour vous guider dans vos recherches et vos implémentations.</p>
 </blockquote>
+<h2 id="github">Github</h2>
+<p>Faites en sorte d'utiliser Github Actions pour vérifier à minimat que vos commits compilent correctement.
+Faites en sorte d'utiliser Github Packages &amp; Github Actions afin de déployer une image de votre application, pour que celle-ci soit récupérable via docker-compose.</p>
 <h2 id="architectures">Architecture(s)</h2>
 <p>(overview_architecture.jpg "Overview-Architecture").</p>
-<h2 id="infrastructure">Infrastructure</h2>
-<p>Chaque composant de l'architecture devra être conteneurisé.
-Afin de créer un écosystème de conteneur, un Docker Swarm devra être mis en place.
-L'infrastructure devra avoir un système de service discovery pour la gestion des services.</p>
-<h2 id="logicielle">Logicielle</h2>
-<p>Tous les services devront mettre en place une architecture hexagonale;
-La qualité de code devra correspondre à minimat aux principes SOLID et à l'implémentation de patron de conception (si nécessaire).</p>
-<h3 id="architecture-hexagonale">Architecture Hexagonale</h3>
+<h3 id="infrastructure">Infrastructure</h3>
+<p>Chaque composant de l'architecture devra être conteneurisé et afin de créer un écosystème de conteneur, un Docker Swarm devra être mis en place.</p>
+<p>L'infrastructure devra avoir :
+- un mécanisme de service discovery pour la gestion des services.
+- un mécanisme de load balancing pour sa résilience.
+- un mécanisme de gateway afin de mettre une abs</p>
+<h3 id="logicielle">Logicielle</h3>
+<ul>
+<li>Tous les services devront mettre en place une architecture hexagonale.</li>
+<li>La qualité de code devra correspondre à minimat aux principes SOLID et à l'implémentation de patron de conception (si nécessaire).</li>
+<li>En cas de communication entre service, mettre en place un contrat d'interface (document PDF, swagger) définissant explicitement le protocole détaillé utilisé, le contexte de cette communication,les données reçues/envoyées ainsi que leurs formats. Ce document devra aussi comporter les mentions des différents cas d'erreur exploités.</li>
+</ul>
+<h4 id="architecture-hexagonale">Architecture Hexagonale</h4>
 <p>Une architecture hexagonale a pour objectif, de mettre une abstraction entre l'objet métier (domain) et les parties de l'application qui l'exploitent (ex : api web et persistence).</p>
 <p>Pour se faire, on met en places des ports , il en existe deux sortes :
 - Sortant (SPI) : ils permettent au domain d'interagir avec l'extérieur, comme les bases de données ou les services externes.
@@ -109,6 +117,8 @@ La qualité de code devra correspondre à minimat aux principes SOLID et à l'im
 <p>Ces ports seront utilisés par des adapters, il en existe deux types :
 - Primaire : ils utilisent les ports entrant pour interargir avec le domain.
 - Secondaire : ils implémentent les ports sortant pour interargir avec le domain.</p>
+<h2 id="interface-utilisateur">Interface Utilisateur</h2>
+<p>L'interface utilisateur devra être appuyé par des maquettes afin </p>
               
             </div>
           </div><footer>
