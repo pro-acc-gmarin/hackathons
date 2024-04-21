@@ -80,8 +80,31 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="cas-dusages">Cas d'usages</h1>
-<h2 id="inscription-et-connexion-utilisateur">Inscription et Connexion Utilisateur</h2>
+<h1 id="objectifs-fonctionnels">Objectif(s) fonctionnel(s)</h1>
+<h2 id="besoins-cibles">Besoin(s) cible(s)</h2>
+<p><strong>Gestion des Utilisateurs</strong> :
+- Inscription des employés au service de l'application.
+- Authentification et gestion des profils utilisateurs (employés, membres du CE, administrateurs).</p>
+<p><strong>Catalogue des Avantages et Services</strong> :
+- Présentation des offres, réductions et avantages proposés par le CE (voyages, billetterie, subventions, etc.).
+- Consultation des détails et conditions des offres.</p>
+<p><strong>Gestion du Panier</strong> :
+- Ajout et suppression d'articles ou services au panier.
+- Gestion du paiement et de la facturation.</p>
+<p><strong>Processus de Paiement</strong> :
+- Intégration d'une solution de paiement sécurisée.
+- Gestion des modes de paiement (carte bancaire, virement, chèque, etc.).
+- Suivi des paiements et historique des transactions.</p>
+<p><strong>Sécurité et Confidentialité</strong> :
+- Protection des données personnelles et sensibles des utilisateurs.
+- Mise en place de mesures de sécurité pour sécuriser les transactions et les données.</p>
+<h2 id="besoins-facultatifs">Besoin(s) facultatif(s)</h2>
+<p><strong>Administration et Gestion des Contenus</strong> :
+Gestion et mise à jour du catalogue des avantages et services.
+Administration des utilisateurs, droits d'accès et permissions.
+Gestion des configurations et paramètres de l'application.</p>
+<h2 id="exemples-de-cas-dusage">Exemple(s) de cas d'usage</h2>
+<h3 id="inscription-et-connexion-utilisateur">Inscription et Connexion Utilisateur</h3>
 <p><strong>Description</strong> : Un utilisateur peut s'inscrire, se connecter et gérer son compte.</p>
 <div class="mermaid">sequenceDiagram
   participant User as Utilisateur
@@ -89,7 +112,7 @@
   User-&gt;&gt;Auth: Inscription/Connexion
   Auth-&gt;&gt;User: Confirmation/Erreur
 </div>
-<h2 id="consultation-du-catalogue-de-produits">Consultation du Catalogue de Produits</h2>
+<h3 id="consultation-du-catalogue-de-produits">Consultation du Catalogue de Produits</h3>
 <p><strong>Description</strong> : Un utilisateur peut consulter le catalogue de produits disponibles.</p>
 <div class="mermaid">sequenceDiagram
   participant User as Utilisateur
@@ -97,7 +120,7 @@
   User-&gt;&gt;Catalog: Requête de Catalogue
   Catalog-&gt;&gt;User: Liste de Produits
 </div>
-<h2 id="processus-de-paiement">Processus de Paiement</h2>
+<h3 id="processus-de-paiement">Processus de Paiement</h3>
 <p><strong>Description</strong> : Un utilisateur peut passer au processus de paiement pour finaliser son achat.</p>
 <div class="mermaid">sequenceDiagram
   participant User as Utilisateur
@@ -105,7 +128,7 @@
   User-&gt;&gt;Payment: Initiation du Paiement
   Payment-&gt;&gt;User: État du Paiement (Success/Erreur)
 </div>
-<h2 id="gestion-des-subventions">Gestion des Subventions</h2>
+<h3 id="gestion-des-subventions">Gestion des Subventions</h3>
 <p><strong>Description</strong> : Un utilisateur peut utiliser des subventions pour payer une partie de son achat.</p>
 <div class="mermaid">sequenceDiagram
   participant User as Utilisateur
