@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Objectif(s) fonctionnel(s) - HackDocs</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Objectif(s) fonctionnel(s)";
+        var mkdocs_page_input_path = "01_c_cas_usages.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> HackDocs
+        </a>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Hackatons</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Avril 2024</a>
+<ul class="current">
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Projet Commun : Application CE</a>
+<ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../00_resume_pedagogique/">Présentation pédagogique</a>
+</li>
+<li class="toctree-l3 current"><a class="reference internal current" href="#">Projet</a>
+<ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../01_a_organisation_projet/">Planning</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../01_b_objectif_technique/">Objectif(s) technique(s)</a>
+</li>
+<li class="toctree-l4 current"><a class="reference internal current" href="./">Objectif(s) fonctionnel(s)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#">Développement du projet</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="../02_a_groupe_1_auth%26sec/">Authentication &amp; Security</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02_b_groupe_2_pay%26tierce/">Paiement &amp; API Tierces</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02_c_groupe_3_crud_api/">API Crud</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../02_d_groupe_4_frontend/">Interface Utilisateur</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../03_ressources/">Ressources</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">HackDocs</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">Hackatons</li>
+<li class="breadcrumb-item">Avril 2024</li>
+<li class="breadcrumb-item">Projet Commun : Application CE</li>
+<li class="breadcrumb-item">Projet</li>
+<li class="breadcrumb-item active">Objectif(s) fonctionnel(s)</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="cas-dusages">Cas d'usages</h1>
+<h2 id="inscription-et-connexion-utilisateur">Inscription et Connexion Utilisateur</h2>
+<p><strong>Description</strong> : Un utilisateur peut s'inscrire, se connecter et gérer son compte.</p>
+<div class="mermaid">sequenceDiagram
+  participant User as Utilisateur
+  participant Auth as Service d'Authentification
+  User-&gt;&gt;Auth: Inscription/Connexion
+  Auth-&gt;&gt;User: Confirmation/Erreur
+</div>
+<h2 id="consultation-du-catalogue-de-produits">Consultation du Catalogue de Produits</h2>
+<p><strong>Description</strong> : Un utilisateur peut consulter le catalogue de produits disponibles.</p>
+<div class="mermaid">sequenceDiagram
+  participant User as Utilisateur
+  participant Catalog as Service Catalogue
+  User-&gt;&gt;Catalog: Requête de Catalogue
+  Catalog-&gt;&gt;User: Liste de Produits
+</div>
+<h2 id="processus-de-paiement">Processus de Paiement</h2>
+<p><strong>Description</strong> : Un utilisateur peut passer au processus de paiement pour finaliser son achat.</p>
+<div class="mermaid">sequenceDiagram
+  participant User as Utilisateur
+  participant Payment as Service Paiement
+  User-&gt;&gt;Payment: Initiation du Paiement
+  Payment-&gt;&gt;User: État du Paiement (Success/Erreur)
+</div>
+<h2 id="gestion-des-subventions">Gestion des Subventions</h2>
+<p><strong>Description</strong> : Un utilisateur peut utiliser des subventions pour payer une partie de son achat.</p>
+<div class="mermaid">sequenceDiagram
+  participant User as Utilisateur
+  participant Subsidy as Service Subventions
+  User-&gt;&gt;Subsidy: Utilisation de Subventions
+  Subsidy-&gt;&gt;User: Confirmation/Erreur
+</div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../01_b_objectif_technique/" title="Objectif(s) technique(s)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../02_a_groupe_1_auth%26sec/" title="Authentication &amp; Security">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../01_b_objectif_technique/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../02_a_groupe_1_auth%26sec/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
